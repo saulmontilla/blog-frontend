@@ -1,13 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <navbar-component />
+
+    <router-view class="container-fluid"/>
+
+    <notification-container />
   </div>
 </template>
 
+<script>
+import NavbarComponent from '@/components/NavbarComponent'
+import NotificationContainer from '@/components/notification/NotificationContainerComponent'
+
+export default {
+  components: {
+    NavbarComponent,
+    NotificationContainer
+  }  
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -28,5 +39,17 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.bg-dark-blue {
+  background-color: darkblue;
+}
+
+.navbar a.router-link-exact-active {
+  color: #fff !important;
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
 </style>
